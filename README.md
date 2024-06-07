@@ -1,32 +1,33 @@
 # MINIMUM SPANNING TREE PROJECT
 
-## GIỚI THIỆU
-ĐÂY LÀ MỘT DỰ ÁN TRIỂN KHAI THUẬT TOÁN KRUSKAL VÀ PRIM ĐỂ TÌM CÂY KHUNG NHỎ NHẤT (MINIMUM SPANNING TREE - MST) NHẰM ỨNG DỤNG TRONG VẤN ĐỀ XÂY DỰNG MẠNG LƯỚI THÔNG TIN VỚI MỨC CHI PHÍ NHỎ NHẤT.
-DỰ ÁN BAO GỒM PHẦN BACKEND VIẾT BẰNG JAVA VÀ PHẦN GIAO DIỆN NGƯỜI DÙNG VIẾT BẰNG JAVA SWING.
+## Introduction
+This project implements Kruskal's and Prim's algorithms to find the Minimum Spanning Tree (MST), aimed at applications in building a cost-effective information network. 
+The project includes a backend written in Java and a user interface written in Java Swing.
 
-## CẤU TRÚC DỰ ÁN
-- **src/GraphRepresentations**: CHỨA MÃ NGUỒN CHÍNH CỦA DỰ ÁN.
-  - **backend**: CHỨA CÁC LỚP VÀ THUẬT TOÁN LIÊN QUAN ĐẾN VIỆC TÌM MST.
-    - `GraphUsingAdjacencyList.java`: LỚP XÂY DỰNG ĐỒ THỊ SỬ DỤNG DANH SÁCH KỀ.
-    - `GraphUsingAdjacencyMatrix.java`: LỚP XÂY DỰNG ĐỒ THỊ SỬ DỤNG MA TRẬN KỀ.
-    - `MinimumSpanningTree.java`: TRIỂN KHAI THUẬT TOÁN PRIM VÀ KRUSKAL ĐỂ TÌM CÂY BAO TRÙM NHỎ NHẤT; ĐỒNG THỜI SO SÁNH THỜI GIAN GIỮA 2 THUẬT TOÁN.
-    - `GraphInterface.java`: LỚP ĐẠI DIỆN CHO ĐỒ THỊ.
-    - `Edge.java`: LỚP ĐẠI DIỆN CHO CẠNH CỦA ĐỒ THỊ.
-    - `Subset.java`: LỚP ĐẠI DIỆN CHO CẤU TRÚC DỮ LIỆU DISJOINT SET UNION - DSU PHỤC VỤ CHO THUẬT TOÁN.
-  - **frontend**: CHỨA CÁC LỚP LIÊN QUAN ĐẾN GIAO DIỆN NGƯỜI DÙNG BẰNG JAVA SWING.
-    - `GraphUI.java`: GIAO DIỆN NGƯỜI DÙNG SỬ DỤNG JAVA SWING.
-    - `MST EDGES`: FILE TXT CHỨA CÁC THÔNG TIN CỦA CÁC CẠNH TRONG ĐỒ THỊ MẪU.
+## Project Structure
+- **src/GraphRepresentations**: Contains the main source code of the project
+  - **backend**: Contains classes and algorithms related to finding the MST
+    - `GraphUsingAdjacencyList.java`: Class for constructing graphs using adjacency lists.
+    - `GraphUsingAdjacencyMatrix.java`: Class for constructing graphs using adjacency matrices.
+    - `MinimumSpanningTree.java`: Implements Prim's and Kruskal's algorithms to find the MST and compares the performance of both algorithms.
+    - `GraphInterface.java`: Interface representing a graph.
+    - `Edge.java`: Class representing an edge of the graph.
+    - `Subset.java`: Class representing the Disjoint Set Union (DSU) data structure used in Kruskal's algorithm.
+  - **frontend**: Contains classes related to the user interface using Java Swing.
+    - `GraphUI.java`: User interface using Java Swing.
+    - `MST EDGES`: A text file containing sample graph edge information.
 
-## YÊU CẦU HỆ THỐNG
-- JAVA DEVELOPMENT KIT (JDK) 8 TRỞ LÊN.
-- IDE HỖ TRỢ JAVA (NETBEANS, ECLIPSE, INTELIJI,...)
+## System Requirements
+- Java Development Kit (JDK) 8 or higher.
+- An IDE supporting Java (NetBeans, Eclipse, IntelliJ, etc.)
 
-## HƯỚNG DẪN SỬ DỤNG
-SAU KHI CHẠY CHƯƠNG TRÌNH GraphUI.java NGƯỜI DÙNG SẼ THẤY GIAO DIỆN SWING HIỆN LÊN CHỨA CÁC NÚT BAO GỒM:
-- `ADD VERTEX`: ĐIỀN TỔNG SỐ ĐỈNH CỦA ĐỒ THỊ
-- `ADD EDGE`: ĐIỀN THÔNG TIN CÁC CẠNH CỦA ĐỒ THỊ BAO GỒM : ĐỈNH XUẤT PHÁT - ĐỈNH ĐÍCH ĐẾN - TRỌNG SỐ
-- `DELETE EDGE`: XÓA THÔNG TIN 1 CẠNH ĐÃ CÓ
-- `IMPORT FROM TXT`: THAY VÌ NHẬP BẰNG TAY THÌ CÓ THỂ INPUT THÔNG TIN CẠNH TỪ FILE TXT VỚI ĐỊNH DẠNG: ĐỈNH XUẤT PHÁT-ĐỈNH ĐÍCH ĐẾN-TRỌNG SỐ (FILE MST EDGES TRONG PROJECT NÀY LÀ 1 VÍ DỤ).LƯU Ý VẪN CẦN THÊM TỔNG SỐ ĐỈNH TRƯỚC KHI NHẬP VÀO THÔNG TIN CÁC CẠNH TỪ FILE TXT.
-- `RUN ALGORITHMS`: CHƯƠNG TRÌNH SẼ IN RA CÁC THÔNG TIN CỦA CÂY ĐỒNG THỜI VẼ LẠI CÂY VÀ TÔ ĐỎ CÂY BAO TRÙM NHỎ NHẤT TRONG ĐỒ THỊ
+## USER GUIDE
+After running the GraphUI.java program, the user will see a Swing interface with the following buttons:
+- `ADD VERTEX`: Enter the total number of vertices in the graph.
+- `ADD EDGE`: Enter the edge information including: source vertex - destination vertex - weight.
+- `DELETE EDGE`: Delete an existing edge.
+- `IMPORT FROM TXT`: Instead of manual input, you can import edge information from a TXT file with the format: source vertex - destination vertex - weight (the MST EDGES file in this project is an example). Note that you still need to add the total number of vertices before importing edge information from the TXT file.
+- `RUN ALGORITHMS`: The program will print the MST information and redraw the graph, highlighting the MST in red.
 
-## DỰ ÁN VẪN CÒN CẨN CẢI THIỆN, SÊ TIẾP TỤC CẬP NHẬT TRONG TƯƠNG LAI.
+## NOTE
+There is still room for improvement in the project that will be updated in the future.
